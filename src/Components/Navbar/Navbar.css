@@ -1,0 +1,36 @@
+.nav-bar {
+  position: sticky;
+  width: 100%;
+}
+.logo_Image {
+  height: 70px;
+}
+.search_bar {
+  background-color: rgb(201, 69, 12);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.search_bar input {
+  height: 25px;
+}
+.nav_menu {
+  background-color: rgb(201, 69, 12);
+}
+.userAndChart {
+  display: flex;
+  justify-content: space-between;
+}
+.menu_items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu_items li {
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+}
