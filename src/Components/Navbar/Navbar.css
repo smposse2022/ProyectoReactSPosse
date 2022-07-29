@@ -1,12 +1,12 @@
 .nav-bar {
   position: sticky;
   width: 100%;
+  background-color: rgb(201, 69, 12);
 }
 .logo_Image {
   height: 70px;
 }
 .search_bar {
-  background-color: rgb(201, 69, 12);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -16,12 +16,10 @@
 .search_bar input {
   height: 25px;
 }
-.nav_menu {
-  background-color: rgb(201, 69, 12);
-}
 .userAndChart {
   display: flex;
   justify-content: space-between;
+  width: 130px;
 }
 .menu_items {
   display: flex;
