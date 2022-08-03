@@ -1,7 +1,21 @@
 import "./Item.css";
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { useState, useEffect } from "react";
 
+export const Mercadolibre = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=auto`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        setProducts(json.results);
+      });
+  }, []);
+  console.log(products);
+};
 const Item = ({
   Id,
   nombre,
