@@ -1,23 +1,10 @@
 import "./Item.css";
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export const Mercadolibre = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=auto`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        setProducts(json.results);
-      });
-  }, []);
-  console.log(products);
-};
 const Item = ({
-  Id,
+  id,
   nombre,
   animal,
   categoría,
@@ -41,6 +28,10 @@ const Item = ({
       <span>${precio}</span>
 
       <ItemCount stock={stock} onAdd={onAdd} initial={1} />
+
+      <Link to={`/detail/${id}`} className="detail_button">
+        Ver Detalle
+      </Link>
     </article>
   );
 };
