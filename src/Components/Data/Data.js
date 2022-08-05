@@ -1,6 +1,6 @@
 const productList = [
   {
-    id: 1,
+    id: "1",
     nombre: "Alimento Eukanuba Cachorro 1kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -13,7 +13,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 2,
+    id: "2",
     nombre: "Alimento Eukanuba Cachorro 3kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -26,7 +26,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 3,
+    id: "3",
     nombre: "Alimento Eukanuba Cachorro 7,5kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -39,7 +39,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 4,
+    id: "4",
     nombre: "Alimento Eukanuba Cachorro 15kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -53,7 +53,7 @@ const productList = [
   },
 
   {
-    id: 5,
+    id: "5",
     nombre: "Alimento Eukanuba Adulto 1kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -66,7 +66,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 6,
+    id: "6",
     nombre: "Alimento Eukanuba Adulto 3kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -79,7 +79,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 7,
+    id: "7",
     nombre: "Alimento Eukanuba Adulto 7,5kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -92,7 +92,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 8,
+    id: "8",
     nombre: "Alimento Eukanuba Adulto 15kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -105,7 +105,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 9,
+    id: "9",
     nombre: "Alimento Royal Canin Cachorro 1kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -118,7 +118,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 10,
+    id: "10",
     nombre: "Alimento Royal Canin Cachorro 3kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -131,7 +131,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 11,
+    id: "11",
     nombre: "Alimento Royal Canin Cachorro 7,5kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -144,7 +144,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 12,
+    id: "12",
     nombre: "Alimento Royal Canin Cachorro 15kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -158,7 +158,7 @@ const productList = [
   },
 
   {
-    id: 13,
+    id: "13",
     nombre: "Alimento Royal Canin Adulto 1kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -171,7 +171,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 14,
+    id: "14",
     nombre: "Alimento Royal Canin Adulto 3kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -184,7 +184,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 15,
+    id: "15",
     nombre: "Alimento Royal Canin Adulto 7,5kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -197,7 +197,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 16,
+    id: "16",
     nombre: "Alimento Royal Canin Adulto 15kg",
     animal: "Perro",
     categoria: "Alimento",
@@ -210,7 +210,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 17,
+    id: "17",
     nombre: "Buzo para Perro",
     animal: "Perro",
     categoria: "Indumentaria",
@@ -223,7 +223,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 18,
+    id: "18",
     nombre: "Buzo para Perro",
     animal: "Perro",
     categoria: "Indumentaria",
@@ -236,7 +236,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 19,
+    id: "19",
     nombre: "Campera para Perro",
     animal: "Perro",
     categoria: "Indumentaria",
@@ -249,7 +249,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 20,
+    id: "20",
     nombre: "Buzo para Perro",
     animal: "Perro",
     categoria: "Indumentaria",
@@ -262,7 +262,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 21,
+    id: "21",
     nombre: "Buzo para Perro",
     animal: "Perro",
     categoria: "Indumentaria",
@@ -275,7 +275,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 22,
+    id: "22",
     nombre: "Juguete Kong para Perros",
     animal: "Perro",
     categoria: "Juguetes",
@@ -289,7 +289,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 23,
+    id: "23",
     nombre: "Pelota para Perros",
     animal: "Perro",
     categoria: "Juguetes",
@@ -302,7 +302,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 24,
+    id: "24",
     nombre: "Peluche para Perros",
     animal: "Perro",
     categoria: "Juguetes",
@@ -315,7 +315,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 25,
+    id: "25",
     nombre: "Soga para Perros",
     animal: "Perro",
     categoria: "Juguetes",
@@ -328,7 +328,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 26,
+    id: "26",
     nombre: "Soga para Perros",
     animal: "Perro",
     categoria: "Juguetes",
@@ -341,7 +341,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 27,
+    id: "27",
     nombre: "Collar para Perros",
     animal: "Perro",
     categoria: "Paseo",
@@ -354,7 +354,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 28,
+    id: "28",
     nombre: "Correa para Perros",
     animal: "Perro",
     categoria: "Paseo",
@@ -367,7 +367,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 29,
+    id: "29",
     nombre: "Correa para Perros",
     animal: "Perro",
     categoria: "Paseo",
@@ -380,7 +380,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 30,
+    id: "30",
     nombre: "Pretal Star Wars para Perros",
     animal: "Perro",
     categoria: "Paseo",
@@ -393,7 +393,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 31,
+    id: "31",
     nombre: "Pretal Minnie para Perros",
     animal: "Perro",
     categoria: "Paseo",
@@ -406,7 +406,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 32,
+    id: "32",
     nombre: "Snack para Perros",
     animal: "Perro",
     categoria: "Snack",
@@ -419,7 +419,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 33,
+    id: "33",
     nombre: "Snack para Perros",
     animal: "Perro",
     categoria: "Snack",
@@ -432,7 +432,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 34,
+    id: "34",
     nombre: "Snack para Perros",
     animal: "Perro",
     categoria: "Snack",
@@ -445,7 +445,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 35,
+    id: "35",
     nombre: "Snack para Perros",
     animal: "Perro",
     categoria: "Snack",
@@ -458,7 +458,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 36,
+    id: "36",
     nombre: "Snack para Perros",
     animal: "Perro",
     categoria: "Snack",
@@ -471,7 +471,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 37,
+    id: "37",
     nombre: "Snack para Perros",
     animal: "Perro",
     categoria: "Snack",
@@ -484,7 +484,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 38,
+    id: "38",
     nombre: "Alimento Cat Chow 1kg",
     animal: "Gato",
     categoria: "Alimento",
@@ -497,7 +497,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 39,
+    id: "39",
     nombre: "Alimento Cat Chow 3kg",
     animal: "Gato",
     categoria: "Alimento",
@@ -510,7 +510,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 40,
+    id: "40",
     nombre: "Alimento Cat Chow 8kg",
     animal: "Gato",
     categoria: "Alimento",
@@ -523,7 +523,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 41,
+    id: "41",
     nombre: "Alimento Cat Chow 15kg",
     animal: "Gato",
     categoria: "Alimento",
@@ -536,7 +536,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 42,
+    id: "42",
     nombre: "Alimento Whiscas 1kg",
     animal: "Gato",
     categoria: "Alimento",
@@ -549,7 +549,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 43,
+    id: "43",
     nombre: "Alimento Whiscas 10kg",
     animal: "Gato",
     categoria: "Alimento",
@@ -562,7 +562,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 44,
+    id: "44",
     nombre: "Juguete para Gatos",
     animal: "Gato",
     categoria: "Juguetes",
@@ -575,7 +575,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 45,
+    id: "45",
     nombre: "Juguete para Gatos",
     animal: "Gato",
     categoria: "Juguetes",
@@ -589,7 +589,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 46,
+    id: "46",
     nombre: "Juguete para Gatos",
     animal: "Gato",
     categoria: "Juguetes",
@@ -603,7 +603,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 47,
+    id: "47",
     nombre: "Juguete para Gatos",
     animal: "Gato",
     categoria: "Juguetes",
@@ -616,7 +616,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 48,
+    id: "48",
     nombre: "Juguete para Gatos",
     animal: "Gato",
     categoria: "Juguetes",
@@ -629,7 +629,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 49,
+    id: "49",
     nombre: "Arnes para Gatos",
     animal: "Gato",
     categoria: "Paseo",
@@ -642,7 +642,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 50,
+    id: "50",
     nombre: "Transportadora/Bolso para Gatos",
     animal: "Gato",
     categoria: "Paseo",
@@ -655,7 +655,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 51,
+    id: "51",
     nombre: "Transportadora para Gatos",
     animal: "Gato",
     categoria: "Paseo",
@@ -668,7 +668,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 52,
+    id: "52",
     nombre: "Acuario Chico para peces",
     animal: "Peces",
     categoria: "Accesorios",
@@ -681,7 +681,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 53,
+    id: "53",
     nombre: "Acuario Grande para peces",
     animal: "Peces",
     categoria: "Accesorios",
@@ -695,7 +695,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 54,
+    id: "54",
     nombre: "Limpiador de peceras",
     animal: "Peces",
     categoria: "Accesorios",
@@ -708,7 +708,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 55,
+    id: "55",
     nombre: "Limpiador de vidrio",
     animal: "Peces",
     categoria: "Accesorios",
@@ -721,7 +721,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 56,
+    id: "56",
     nombre: "Red para peces",
     animal: "Peces",
     categoria: "Accesorios",
@@ -734,7 +734,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 57,
+    id: "57",
     nombre: "Termómetro para peceras",
     animal: "Peces",
     categoria: "Accesorios",
@@ -747,7 +747,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 58,
+    id: "58",
     nombre: "Adorno Caracol",
     animal: "Peces",
     categoria: "Accesorios",
@@ -760,7 +760,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 59,
+    id: "59",
     nombre: "Adorno Castillo",
     animal: "Peces",
     categoria: "Accesorios",
@@ -773,7 +773,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 60,
+    id: "60",
     nombre: "Adorno Coral",
     animal: "Peces",
     categoria: "Accesorios",
@@ -786,7 +786,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 61,
+    id: "61",
     nombre: "Adorno Estrella de Mar",
     animal: "Peces",
     categoria: "Accesorios",
@@ -800,7 +800,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 62,
+    id: "62",
     nombre: "Alimento para peces Tetra Min",
     animal: "Peces",
     categoria: "Alimento",
@@ -813,7 +813,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 63,
+    id: "63",
     nombre: "Alimento para peces Tetra Min",
     animal: "Peces",
     categoria: "Alimento",
@@ -826,7 +826,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 64,
+    id: "64",
     nombre: "Bebedero para Aves",
     animal: "Aves",
     categoria: "Accesorios",
@@ -839,7 +839,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 65,
+    id: "65",
     nombre: "Comedero para Aves",
     animal: "Aves",
     categoria: "Accesorios",
@@ -852,7 +852,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 66,
+    id: "66",
     nombre: "Jaula para Aves Chica",
     animal: "Aves",
     categoria: "Accesorios",
@@ -865,7 +865,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 67,
+    id: "67",
     nombre: "Jaula para Aves Grande",
     animal: "Aves",
     categoria: "Accesorios",
@@ -878,7 +878,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 68,
+    id: "68",
     nombre: "Alpiste para Aves",
     animal: "Aves",
     categoria: "Alimento",
@@ -891,7 +891,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 69,
+    id: "69",
     nombre: "Mix Veggie para Aves",
     animal: "Aves",
     categoria: "Alimento",
@@ -904,7 +904,7 @@ const productList = [
     stock: 10,
   },
   {
-    id: 70,
+    id: "70",
     nombre: "Suplemento Alimentario para Aves",
     animal: "Aves",
     categoria: "Alimento",
@@ -932,5 +932,15 @@ export const getProducts = () => {
 export const getProductById = (id) => {
   return new Promise((resolve) => {
     resolve(productList.find((prod) => prod.id === id));
+  });
+};
+export const getProductsByCategory = (categoryId) => {
+  return new Promise((resolve) => {
+    resolve(productList.filter((prod) => prod.categoria === categoryId));
+  });
+};
+export const getProductsByPet = (petId) => {
+  return new Promise((resolve) => {
+    resolve(productList.filter((prod) => prod.animal === petId));
   });
 };
