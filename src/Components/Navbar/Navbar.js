@@ -6,11 +6,13 @@ const Navbar = () => {
   return (
     <nav className="nav-bar">
       <div className="search_bar">
-        <img
-          className="logo_Image"
-          src="img/PugTransparent.png"
-          alt="Logo Pugs&Co"
-        />
+        <Link to="/">
+          <img
+            className="logo_Image"
+            src="../img/PugTransparent.png"
+            alt="Logo Pugs&Co"
+          />
+        </Link>
         <input type="text" />
         <div className="userAndChart">
           <a>Usuario</a>
