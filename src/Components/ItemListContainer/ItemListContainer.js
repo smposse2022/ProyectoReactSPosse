@@ -14,7 +14,16 @@ const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
   const { petId } = useParams();
-
+  /*useEffect(() => {
+    const onResize = () => {
+      console.log("Cambio de tamaño de la pantalla");
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+*/
   useEffect(() => {
     if (categoryId) {
       getProductsByCategory(categoryId).then((products) => {
