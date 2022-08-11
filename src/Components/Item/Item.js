@@ -2,7 +2,12 @@ import "./Item.css";
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import CartContext from "../Context/CartContext";
+// Consumo el Context.
+// Como se puede consumir + de 1 contexto, hay que decirle qué contexto voy a consumir
+// Voy a necesitar la referencia con la que creé ese Contexto. La exporto e importo
+// El Context es un Hook. Lo tengo que ejecutar siemrpe x regla de Hook
 
 const Item = ({
   id,
@@ -20,19 +25,22 @@ const Item = ({
     console.log("hice click en el item");
   };
 */
+  //Guardo el Contexto en un Valor
+  const valor = useContext(CartContext);
+  console.log(valor);
   const [quantityToAdd, setQuantityToAdd] = useState(0);
+  const { addItem, getProductQuantity } = useContext(CartContext);
 
-  const onAdd = (quantity) => {
-    alert(
-      `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
-    );
-  };
   const handleOnAdd = (quantity) => {
     alert(
       `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
     );
     setQuantityToAdd(quantity);
+    const productToAdd = { id, nombre, precio, quantity };
+
+    addItem(productToAdd);
   };
+  const productQuantity = getProductQuantity(id);
 
   return (
     <article className="product_card" /*onClick={handleClick}*/>
@@ -43,7 +51,11 @@ const Item = ({
 
       <div>
         {quantityToAdd === 0 ? (
-          <ItemCount stock={stock} onAdd={handleOnAdd} initial={1} />
+          <ItemCount
+            stock={stock}
+            onAdd={handleOnAdd}
+            initial={productQuantity}
+          />
         ) : (
           <Link to="/cart">Finalizar compra</Link>
         )}

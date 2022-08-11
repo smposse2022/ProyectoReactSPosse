@@ -2,7 +2,7 @@ import "./ItemCount.css";
 import React from "react";
 import { useState } from "react";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial = 1, stock, onAdd }) => {
   //Hook de estado - useState
   const [quantity, setQuantity] = useState(initial);
 

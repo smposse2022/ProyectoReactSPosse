@@ -1,12 +1,19 @@
 import "./CartWidget.css";
+import { useContext } from "react";
+import CartContext from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
+  const { getQuantity } = useContext(CartContext);
+  const quantity = getQuantity();
+
   return (
-    <div>
+    <Link to="/cart">
       <span>
-        <ion-icon name="cart-outline"></ion-icon>0
+        <ion-icon name="cart-outline"></ion-icon>
+        {quantity}
       </span>
-    </div>
+    </Link>
   );
 };
 export default CartWidget;
