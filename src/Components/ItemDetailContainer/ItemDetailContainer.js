@@ -1,17 +1,30 @@
 import { useState, useEffect } from "react";
-import { getProductById } from "../Data/Data";
+//import { getProductById } from "../Data/Data";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+// getDoc en singular me trae 1 sólo producto. Y la función doc tiene un 3er argumento, que aparte de decirle a qué base de datos tiene que ir a buscar, el nombre de la colección, le tengo que pasar el id del documento
+import { getDoc, doc } from "firebase/firestore";
+import { dataBase } from "../../Services/Firebase";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState();
   const { productId } = useParams();
 
   useEffect(() => {
-    getProductById(`${productId}`).then((product) => {
+    getDoc(doc(dataBase, "productList", productId))
+      .then((response) => {
+        const data = response.data();
+        const productAdapted = { id: response.id, ...data };
+        setProduct(productAdapted);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    /*getProductById(`${productId}`).then((product) => {
       setProduct(product);
     });
-  }, []);
+  */
+  }, [productId]);
 
   return (
     <div>

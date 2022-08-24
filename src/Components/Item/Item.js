@@ -4,6 +4,8 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import CartContext from "../Context/CartContext";
+import NotificationContext from "../Notification/Notification";
+
 // Consumo el Context.
 // Como se puede consumir + de 1 contexto, hay que decirle qué contexto voy a consumir
 // Voy a necesitar la referencia con la que creé ese Contexto. La exporto e importo
@@ -30,15 +32,20 @@ const Item = ({
   console.log(valor);
   const [quantityToAdd, setQuantityToAdd] = useState(0);
   const { addItem, getProductQuantity } = useContext(CartContext);
+  const { setNotification } = useContext(NotificationContext);
 
   const handleOnAdd = (quantity) => {
-    alert(
+    /*alert(
       `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
-    );
+    );*/
     setQuantityToAdd(quantity);
     const productToAdd = { id, nombre, precio, quantity };
 
     addItem(productToAdd);
+    setNotification(
+      "success",
+      `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
+    );
   };
   const productQuantity = getProductQuantity(id);
 

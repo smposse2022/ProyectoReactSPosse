@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link to="/">
           <img
             className="logo_Image"
-            src="../img/PugTransparent.png"
+            src="https://i.ibb.co/ChvmWG5/Pug-Transparent.png"
             alt="Logo Pugs&Co"
           />
         </Link>

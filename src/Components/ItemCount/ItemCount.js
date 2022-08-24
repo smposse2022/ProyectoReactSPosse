@@ -1,10 +1,15 @@
 import "./ItemCount.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 const ItemCount = ({ initial = 1, stock, onAdd }) => {
   //Hook de estado - useState
   const [quantity, setQuantity] = useState(initial);
+
+  useEffect(() => {
+    setQuantity(initial);
+    return () => setQuantity(1);
+  }, [initial]);
 
   const addProduct = (num) => {
     setQuantity(quantity + num);

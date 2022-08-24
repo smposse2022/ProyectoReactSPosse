@@ -1,8 +1,9 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CartContext from "../Context/CartContext";
+import NotificationContext from "../Notification/Notification";
 
 const ItemDetail = ({
   id,
@@ -18,17 +19,27 @@ const ItemDetail = ({
   stock,
 }) => {
   const [quantityToAdd, setQuantityToAdd] = useState(0);
+  const [quantity, setQuantity] = useState(0);
   //Guardo el Contexto en un Valor
   const { addItem, getProductQuantity } = useContext(CartContext);
+  const { setNotification } = useContext(NotificationContext);
+
+  useEffect(() => {
+    setQuantity(getProductQuantity(id));
+  }, [id]);
 
   const handleOnAdd = (quantity) => {
-    alert(
+    /*alert(
       `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
-    );
+    );*/
     setQuantityToAdd(quantity);
     const productToAdd = { id, nombre, precio, quantity };
 
     addItem(productToAdd);
+    setNotification(
+      "success",
+      `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
+    );
   };
   const productQuantity = getProductQuantity(id);
   return (

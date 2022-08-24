@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Animation from "./Components/Animation/Animation";
 import { createContext, useState } from "react";
 import { CartContextProvider } from "./Components/Context/CartContext";
+import { NotificationProvider } from "./Components/Notification/Notification";
 
 // Creo un Context
 // A traves del value del .Provider puedo compartir 1 solo dato
@@ -17,26 +18,28 @@ import { CartContextProvider } from "./Components/Context/CartContext";
 function App() {
   return (
     <div className="App">
-      <CartContextProvider>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={<ItemListContainer saludo="Hola curso de React JS" />}
-            />
-            <Route
-              path="/category/:categoryId"
-              element={<ItemListContainer />}
-            />
-            <Route path="/animal/:petId" element={<ItemListContainer />} />
-            <Route
-              path="/detail/:productId"
-              element={<ItemDetailContainer />}
-            />
-          </Routes>
-        </BrowserRouter>
-      </CartContextProvider>
+      <NotificationProvider>
+        <CartContextProvider>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route
+                path="/"
+                element={<ItemListContainer saludo="Hola curso de React JS" />}
+              />
+              <Route
+                path="/category/:categoryId"
+                element={<ItemListContainer />}
+              />
+              <Route path="/animal/:petId" element={<ItemListContainer />} />
+              <Route
+                path="/detail/:productId"
+                element={<ItemDetailContainer />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </CartContextProvider>
+      </NotificationProvider>
     </div>
   );
 }
