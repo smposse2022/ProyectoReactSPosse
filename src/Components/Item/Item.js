@@ -29,7 +29,7 @@ const Item = ({
 */
   //Guardo el Contexto en un Valor
   const valor = useContext(CartContext);
-  console.log(valor);
+  //console.log(valor);
   const [quantityToAdd, setQuantityToAdd] = useState(0);
   const { addItem, getProductQuantity } = useContext(CartContext);
   const { setNotification } = useContext(NotificationContext);

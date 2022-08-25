@@ -9,10 +9,10 @@ const CartWidget = () => {
 
   return (
     <Link to="/cart">
-      <span>
+      <button disabled={quantity === 0}>
         <ion-icon name="cart-outline"></ion-icon>
         {quantity}
-      </span>
+      </button>
     </Link>
   );
 };
