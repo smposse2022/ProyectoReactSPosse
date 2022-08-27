@@ -55,6 +55,7 @@ const Cart = () => {
       <button onClick={() => clearCart()} className="Button">
         Limpiar carrito
       </button>
+      <Link to="/checkout">Finalizar la compra</Link>
     </div>
   );
 };

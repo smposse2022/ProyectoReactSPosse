@@ -10,6 +10,7 @@ import { createContext, useState } from "react";
 import { CartContextProvider } from "./Components/Context/CartContext";
 import { NotificationProvider } from "./Components/Notification/Notification";
 import Cart from "./Components/Cart/Cart";
+import Checkout from "./Components/Checkout/Checkout";
 
 // Creo un Context
 // A traves del value del .Provider puedo compartir 1 solo dato
@@ -38,6 +39,7 @@ function App() {
                 element={<ItemDetailContainer />}
               />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </BrowserRouter>
         </CartContextProvider>

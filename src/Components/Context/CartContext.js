@@ -54,7 +54,7 @@ export const CartContextProvider = ({ children }) => {
     let accu = 0;
 
     cart.forEach((prod) => {
-      accu += prod.quantity * prod.price;
+      accu += prod.quantity * prod.precio;
     });
 
     return accu;
