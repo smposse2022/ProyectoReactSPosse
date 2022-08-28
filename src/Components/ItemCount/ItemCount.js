@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 
 const ItemCount = ({ initial = 1, stock, onAdd }) => {
-  //Hook de estado - useState
   const [quantity, setQuantity] = useState(initial);
 
   useEffect(() => {
@@ -35,11 +34,7 @@ const ItemCount = ({ initial = 1, stock, onAdd }) => {
         </button>
       </div>
 
-      <button
-        className="add_button"
-        onClick={() => onAdd(quantity)}
-        //disabled={stock === 0 ? true : null}
-      >
+      <button className="add_button" onClick={() => onAdd(quantity)}>
         Añadir
       </button>
     </div>

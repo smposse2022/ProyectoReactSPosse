@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-//import { getProductById } from "../Data/Data";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 // getDoc en singular me trae 1 sólo producto. Y la función doc tiene un 3er argumento, que aparte de decirle a qué base de datos tiene que ir a buscar, el nombre de la colección, le tengo que pasar el id del documento
@@ -20,10 +19,6 @@ const ItemDetailContainer = () => {
       .catch((error) => {
         console.log(error);
       });
-    /*getProductById(`${productId}`).then((product) => {
-      setProduct(product);
-    });
-  */
   }, [productId]);
 
   return (

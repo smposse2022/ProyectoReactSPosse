@@ -6,11 +6,6 @@ import { useState, useContext } from "react";
 import CartContext from "../Context/CartContext";
 import NotificationContext from "../Notification/Notification";
 
-// Consumo el Context.
-// Como se puede consumir + de 1 contexto, hay que decirle qué contexto voy a consumir
-// Voy a necesitar la referencia con la que creé ese Contexto. La exporto e importo
-// El Context es un Hook. Lo tengo que ejecutar siemrpe x regla de Hook
-
 const Item = ({
   id,
   nombre,
@@ -22,22 +17,13 @@ const Item = ({
   img,
   stock,
 }) => {
-  /*const handleClick = (e) => {
-    e.stopPropagation();
-    console.log("hice click en el item");
-  };
-*/
-  //Guardo el Contexto en un Valor
   const valor = useContext(CartContext);
-  //console.log(valor);
+
   const [quantityToAdd, setQuantityToAdd] = useState(0);
   const { addItem, getProductQuantity } = useContext(CartContext);
   const { setNotification } = useContext(NotificationContext);
 
   const handleOnAdd = (quantity) => {
-    /*alert(
-      `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
-    );*/
     setQuantityToAdd(quantity);
     const productToAdd = { id, nombre, precio, quantity };
 
@@ -50,7 +36,7 @@ const Item = ({
   const productQuantity = getProductQuantity(id);
 
   return (
-    <article className="product_card" /*onClick={handleClick}*/>
+    <article className="product_card">
       <img className="product_card_image" src={img} alt="" />
 
       <h3 className="product_card_name">{nombre}</h3>

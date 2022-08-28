@@ -8,12 +8,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyABRLAOecUN52NcQGueO0SJLHj-Q9jre6o",
-  authDomain: "curso-react-sposse.firebaseapp.com",
-  projectId: "curso-react-sposse",
-  storageBucket: "curso-react-sposse.appspot.com",
-  messagingSenderId: "704936585592",
-  appId: "1:704936585592:web:f1f0928aab45fca6ac808d",
+  apiKey: process.env.REACT_APP_apikey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

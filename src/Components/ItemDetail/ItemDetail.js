@@ -20,7 +20,7 @@ const ItemDetail = ({
 }) => {
   const [quantityToAdd, setQuantityToAdd] = useState(0);
   const [quantity, setQuantity] = useState(0);
-  //Guardo el Contexto en un Valor
+
   const { addItem, getProductQuantity } = useContext(CartContext);
   const { setNotification } = useContext(NotificationContext);
 
@@ -29,9 +29,6 @@ const ItemDetail = ({
   }, [id]);
 
   const handleOnAdd = (quantity) => {
-    /*alert(
-      `Has agregado ${quantity} de ${nombre}, marca ${marca}, de ${cantidad} al carrito`
-    );*/
     setQuantityToAdd(quantity);
     const productToAdd = { id, nombre, precio, quantity };
 

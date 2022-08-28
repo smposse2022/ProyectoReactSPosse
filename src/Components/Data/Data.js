@@ -88,7 +88,7 @@ const productList = [
     precio: "6000",
     cantidad: "7,5 kg",
     img: "https://i.ibb.co/PF21njk/Alimento-Eukanuba-Adulto-7-5kg.webp",
-    descripcion: "Alimento para Perro Eukanuba Adulto 3kg",
+    descripcion: "Alimento para Perro Eukanuba Adulto 7,5kg",
     stock: 10,
   },
   {
@@ -101,7 +101,7 @@ const productList = [
     precio: "11000",
     cantidad: "15 kg",
     img: "https://i.ibb.co/SvdwpFK/Alimento-Eukanuba-Adulto-15kg.webp",
-    descripcion: "Alimento para Perro Eukanuba Adulto 3kg",
+    descripcion: "Alimento para Perro Eukanuba Adulto 15kg",
     stock: 10,
   },
   {
@@ -140,7 +140,7 @@ const productList = [
     precio: "6100",
     cantidad: "7,5 kg",
     img: "https://i.ibb.co/xgt72G5/Alimento-Royal-Canin-Cachorro-7-5kg.webp",
-    descripcion: "Alimento para Perro Royal Canin Cachorro 3kg",
+    descripcion: "Alimento para Perro Royal Canin Cachorro 7,5kg",
     stock: 10,
   },
   {
@@ -153,7 +153,7 @@ const productList = [
     precio: "11500",
     cantidad: "15 kg",
     img: "https://i.ibb.co/kyq4WS6/Alimento-Royal-Canin-Cachorro-15kg.webp",
-    descripcion: "Alimento para Perro Royal Canin Cachorro 3kg",
+    descripcion: "Alimento para Perro Royal Canin Cachorro 15kg",
     stock: 10,
   },
 
@@ -193,7 +193,7 @@ const productList = [
     precio: "6100",
     cantidad: "7,5 kg",
     img: "https://i.ibb.co/GvjDZ6V/Alimento-Royal-Canin-Adulto-7-5kg.webp",
-    descripcion: "Alimento para Perro Royal Canin Adulto 3kg",
+    descripcion: "Alimento para Perro Royal Canin Adulto 7,5kg",
     stock: 10,
   },
   {
@@ -206,7 +206,7 @@ const productList = [
     precio: "11500",
     cantidad: "15 kg",
     img: "https://i.ibb.co/zVmvZTS/Royal-Canin-15kg.png",
-    descripcion: "Alimento para Perro Royal Canin Adulto 3kg",
+    descripcion: "Alimento para Perro Royal Canin Adulto 15kg",
     stock: 10,
   },
   {
@@ -260,7 +260,7 @@ const productList = [
     img: "https://i.ibb.co/tBS9NN3/Indumentaria-Perro-Minnie.webp",
     descripcion: "Buzo Minnie para Perro marca propia Pugs&Co",
     stock: 10,
-  },
+  }, // llegué hasta el 20 inclusive + 38 + 52
   {
     id: "21",
     nombre: "Buzo para Perro",
