@@ -1,9 +1,6 @@
 import { useState, createContext } from "react";
 const CartContext = createContext();
 
-// Un componente de alto orden es un componente que recibe otros componentes por parámetro.
-// Al igual que una función de alto orden es una función que recibe otras funciones por parámetro.
-
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const addItem = (productToAdd) => {

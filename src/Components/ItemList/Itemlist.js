@@ -1,6 +1,6 @@
 import "./Itemlist.css";
 import Item from "../Item/Item";
-
+// Revisar el itemList. Puede ir products?
 const itemList = ({ products }) => {
   return (
     <div className="productList_container">

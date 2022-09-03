@@ -13,43 +13,129 @@ import {
   documentId,
   writeBatch,
 } from "firebase/firestore"; //La función addDoc de Firestore me permite subir documentos a FireStore
-import { async } from "@firebase/util";
+
 // Tengo que hacer referencia de a dónde lo voy a subir, en este caso a una colección.
+// Tengo que completar el Readme. Terminar de completarlo agregando las rutas que faltan. Una descripción de los componentes que hacen referencia a esas nuevas rutas.
+//Hacer el gif completo, hasta hacer el pedido y aparezca el id de la orden generada.
+//Limpiar el proyecto de todas las cosas que no usamos
 const Checkout = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [adress, setAdress] = useState("");
+
+  const handleChangeFirstName = (e) => {
+    setFirstName(e.target.value);
+  };
+
+  const handleChangeLastName = (e) => {
+    setLastName(e.target.value);
+  };
+
+  const handleChangePhone = (e) => {
+    setPhone(e.target.value);
+  };
+
+  const handleChangeAdress = (e) => {
+    setAdress(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   const [isLoading, setIsLoading] = useState(false);
 
-  const { cart, getQuantity, getTotal, clearCart } = useContext(CartContext);
+  const [orderCreated, setOrderCreated] = useState(false);
 
-  const totalQuantity = getQuantity;
-  const total = getTotal;
+  const { cart, getQuantity, totalPrice, clearCart } = useContext(CartContext);
 
-  const Form = () => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [adress, setAdress] = useState("");
+  const totalQuantity = getQuantity();
 
-    const handleChangeFirstName = (e) => {
-      setFirstName(e.target.value);
-    };
+  const total = totalPrice();
 
-    const handleChangeLastName = (e) => {
-      setLastName(e.target.value);
-    };
+  const navigate = useNavigate();
+  // useNavigate() es un hook que al ejecutarla, me navega a otra ruta
 
-    const handleChangePhone = (e) => {
-      setPhone(e.target.value);
-    };
+  const createOrder = async () => {
+    setIsLoading(true);
+    try {
+      const objOrder = {
+        buyer: {
+          firstName,
+          lastName,
+          phone,
+          adress,
+        },
+        items: cart,
+        totalQuantity,
+        total,
+        date: new Date(),
+      };
 
-    const handleChangeAdress = (e) => {
-      setAdress(e.target.value);
-    };
+      const ids = cart.map((prod) => prod.id);
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-    };
+      const productListRef = collection(dataBase, "productList");
 
+      const productsAddesFromFirestore = await getDocs(
+        query(productListRef, where(documentId(), "in", ids))
+      );
+      const { docs } = productsAddesFromFirestore;
+
+      const outOfStock = [];
+
+      const batch = writeBatch(dataBase);
+
+      docs.forEach((doc) => {
+        const dataDoc = doc.data();
+        const stockDataBase = dataDoc.stock;
+
+        const productAddedToCart = cart.find((prod) => prod.id === doc.id);
+        const prodQuantity = productAddedToCart?.quantity;
+
+        if (stockDataBase >= prodQuantity) {
+          batch.update(doc.ref, { stock: stockDataBase - prodQuantity }); // doc.ref es la referencia directa que tengo dentro del objeto snapshot, de ese documento
+        } else {
+          outOfStock.push({ id: doc.id, ...dataDoc });
+        }
+      });
+      if (outOfStock.length === 0) {
+        await batch.commit();
+
+        const orderRef = collection(dataBase, "orders");
+        const orderAdded = await addDoc(orderRef, objOrder);
+
+        console.log(`El id de su orden es:${orderAdded.id} `);
+        clearCart();
+        setOrderCreated(true);
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      } else {
+        alert(`Hay productos que están fuera de stock`);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isLoading) {
+    return <h1>Se está generando tu ordenn</h1>;
+  }
+  if (orderCreated) {
     return (
+      <h1>
+        La orden fue creada correctamente, sera redirigido al listado de
+        productos en 2 segundos
+      </h1>
+    );
+  }
+
+  return (
+    <>
+      <h1>Checkout</h1>
       <div style={{ width: "100%" }}>
         <form>
           <input
@@ -80,85 +166,8 @@ const Checkout = () => {
             value={adress}
             onChange={handleChangeAdress}
           />
-          <button>Enviar</button>
         </form>
       </div>
-    );
-  };
-
-  const navigate = useNavigate();
-  // useNavigate() es un hook que al ejecutarla, me navega a otra ruta
-
-  const createOrder = async () => {
-    setIsLoading(true);
-    try {
-      const objOrder = {
-        buyer: { firstName, lastName, phone, adress },
-        items: cart,
-        totalQuantity,
-        total,
-        date: new Date(),
-      };
-      /*const orderRef = collection(dataBase, "orders"); // al hacer ref a una colección que no existe en FireStore, la crea
-
-  addDoc(orderRef, objOrder).then((response) => {
-    console.log(response);
-  });
-  const orderRef = doc(dataBase, "productList", "GnV4QSWvOIlQuwUYUZkx");
-  updateDoc(orderRef, { stock: 100 }).then((response) => {
-    console.log(response);
-  });*/
-      const ids = cart.map((prod) => prod.id);
-      const productListRef = collection(dataBase, "productList");
-
-      const productsAddesFromFirestore = await getDocs(
-        query(productListRef, where(documentId(), "in", ids))
-      );
-      const { docs } = productsAddesFromFirestore;
-
-      const ourOfStock = [];
-
-      const batch = writeBatch(dataBase);
-
-      docs.forEach((doc) => {
-        const dataDoc = doc.data();
-        const stockDataBase = dataDoc.stock;
-
-        const productAddedToCart = cart.find((prod) => prod.id === doc.id);
-        const prodQuantity = productAddedToCart?.quantity;
-
-        if (stockDataBase >= prodQuantity) {
-          batch.update(doc.ref, { stock: stockDataBase - prodQuantity }); // doc.ref es la referencia directa que tengo dentro del objeto snapshot, de ese documento
-        } else {
-          ourOfStock.push({ id: doc.id, ...dataDoc });
-        }
-      });
-      if (ourOfStock.length === 0) {
-        await batch.commit();
-        const orderRef = collection(dataBase, "orders");
-        const orderAdded = await addDoc(orderRef, objOrder);
-
-        console.log(`El id de su orden es:${orderAdded.id} `);
-        clearCart();
-        navigate("/");
-      } else {
-        console.log(`Hay productos que están fuera de stock`);
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  if (isLoading) {
-    return <h1>Se está generando tu ordenn</h1>;
-  }
-
-  return (
-    <>
-      <h1>Checkout</h1>
-      <Form />
       <button onClick={createOrder}>Generar Orden</button>
     </>
   );
