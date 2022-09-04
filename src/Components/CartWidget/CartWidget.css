@@ -1,0 +1,21 @@
+.cart_icon {
+  width: auto;
+  padding: 6px;
+  font-size: 15px;
+  background: white;
+  border-radius: 30px;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(201, 69, 12);
+  border: 1.5px solid #0e0d0d;
+  box-shadow: 0 4px 4px 0 #0e0d0d;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.cart_icon:hover {
+  background: rgb(243, 201, 201);
+  color: #0e0d0d;
+  transition: all 0.5s;
+}

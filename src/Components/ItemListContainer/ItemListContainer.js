@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../Services/firestore";
 import { useAsync } from "../../hooks/useAsync";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   const { petId } = useParams();
 
   const getProductsFromFirestore = () => getProducts(petId);
@@ -31,7 +31,7 @@ const ItemListContainer = (props) => {
   }
 
   return (
-    <div onClick={() => console.log("click en itemlistcontainer")}>
+    <div>
       <h1>{`${petId || ""}`}</h1>
       <ItemList products={data} />
     </div>

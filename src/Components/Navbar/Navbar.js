@@ -1,11 +1,11 @@
 import "./Navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="nav-bar">
-      <div className="search_bar">
+      <div className="main_bar">
         <Link to="/">
           <img
             className="logo_Image"
@@ -13,33 +13,24 @@ const Navbar = () => {
             alt="Logo Pugs&Co"
           />
         </Link>
-        <input type="text" />
-        <div className="userAndChart">
-          <a>Usuario</a>
-          <a>
-            Carrito
-            <CartWidget />
-          </a>
+        <div className="Chart">
+          <a className="chart_item">Carrito</a>
+          <CartWidget />
         </div>
       </div>
       <div className="nav_menu">
-        <ul className="menu_items">
-          <li>
-            <Link to="/animal/Perro">Perros</Link>
-          </li>
-          <li>
-            <Link to="/animal/Gato">Gatos</Link>
-          </li>
-          <li>
-            <Link to="/animal/Peces">Peces</Link>
-          </li>
-          <li>
-            <Link to="/animal/Aves">Aves</Link>
-          </li>
-          <li>
-            <a>Promociones</a>
-          </li>
-        </ul>
+        <NavLink to="/animal/Perro" className="nav_item">
+          Perros
+        </NavLink>
+        <NavLink to="/animal/Gato" className="nav_item">
+          Gatos
+        </NavLink>
+        <NavLink to="/animal/Peces" className="nav_item">
+          Peces
+        </NavLink>
+        <NavLink to="/animal/Aves" className="nav_item">
+          Aves
+        </NavLink>
       </div>
     </nav>
   );

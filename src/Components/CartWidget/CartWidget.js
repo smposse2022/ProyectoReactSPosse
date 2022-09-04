@@ -9,7 +9,7 @@ const CartWidget = () => {
 
   return (
     <Link to="/cart">
-      <button disabled={quantity === 0}>
+      <button className="cart_icon" disabled={quantity === 0}>
         <ion-icon name="cart-outline"></ion-icon>
         {quantity}
       </button>

@@ -41,17 +41,19 @@ const ItemDetail = ({
   const productQuantity = getProductQuantity(id);
   return (
     <div className="product_detail_container">
-      <article className="product_card">
-        <img className="product_card_image" src={img} alt={nombre} />
+      <article className="product_card_detail">
+        <img className="product_card_detail_image" src={img} alt={nombre} />
 
-        <h3 className="product_card_name">{nombre}</h3>
-        <p>{animal}</p>
-        <p>{categoria}</p>
-        <p>{marca}</p>
-        <p>{edad}</p>
-        <p>{cantidad}</p>
-        <p>{descripcion}</p>
-        <span>${precio}</span>
+        <h3 className="product_card_detail_name">{nombre}</h3>
+        <div className="product_card_detail_text">
+          <p>{animal}</p>
+          <p>{categoria}</p>
+          <p>{marca}</p>
+          <p>{edad}</p>
+          <p>{cantidad}</p>
+          <p>{descripcion}</p>
+          <span>${precio}</span>
+        </div>
         <div>
           {quantityToAdd === 0 ? (
             <ItemCount
@@ -60,7 +62,9 @@ const ItemDetail = ({
               initial={productQuantity}
             />
           ) : (
-            <Link to="/cart">Finalizar compra</Link>
+            <Link to="/cart" className="button_finish">
+              Finalizar compra
+            </Link>
           )}
         </div>
       </article>

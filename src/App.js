@@ -28,10 +28,6 @@ function App() {
                 path="/"
                 element={<ItemListContainer saludo="Hola curso de React JS" />}
               />
-              <Route
-                path="/category/:categoryId"
-                element={<ItemListContainer />}
-              />
               <Route path="/animal/:petId" element={<ItemListContainer />} />
               <Route
                 path="/detail/:productId"

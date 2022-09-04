@@ -9,7 +9,7 @@ const Notification = ({ message, messageType }) => {
   };
   const notificationStyle = {
     position: "absolute",
-    top: 50,
+    top: "35%",
     right: 10,
     zIndex: 1,
     color: "white",

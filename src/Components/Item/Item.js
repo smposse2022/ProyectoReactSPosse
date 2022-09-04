@@ -1,6 +1,5 @@
 import "./Item.css";
 import React from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import CartContext from "../Context/CartContext";
@@ -40,23 +39,13 @@ const Item = ({
       <img className="product_card_image" src={img} alt="" />
 
       <h3 className="product_card_name">{nombre}</h3>
-      <span>${precio}</span>
+      <div className="priceAndDetail">
+        <span>${precio}</span>
 
-      <div>
-        {quantityToAdd === 0 ? (
-          <ItemCount
-            stock={stock}
-            onAdd={handleOnAdd}
-            initial={productQuantity}
-          />
-        ) : (
-          <Link to="/cart">Finalizar compra</Link>
-        )}
+        <Link to={`/detail/${id}`} className="detail_button">
+          Ver Detalle
+        </Link>
       </div>
-
-      <Link to={`/detail/${id}`} className="detail_button">
-        Ver Detalle
-      </Link>
     </article>
   );
 };

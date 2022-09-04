@@ -1,0 +1,36 @@
+.checkout_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkout_input {
+  width: 50%;
+  height: 20px;
+  margin: 10px;
+}
+.checkout_button {
+  text-decoration: none;
+  border-radius: 25;
+  margin: 0 30px;
+  width: auto;
+  padding: 12px;
+  font-size: 10px;
+  background: rgb(243, 201, 201);
+  border-radius: 8px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(201, 69, 12);
+  border: none;
+  border-style: none;
+  cursor: pointer;
+  font-size: larger;
+}
+.checkout_button:hover {
+  background: rgb(243, 201, 201);
+  color: #0e0d0d;
+  transition: all 0.5s;
+}

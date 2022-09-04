@@ -1,4 +1,5 @@
 import CartContext from "../Context/CartContext";
+import "./Checkout.css";
 import { useState, useContext } from "react";
 import { dataBase } from "../../Services/Firebase";
 import { useNavigate } from "react-router-dom";
@@ -13,11 +14,11 @@ import {
   documentId,
   writeBatch,
 } from "firebase/firestore"; //La función addDoc de Firestore me permite subir documentos a FireStore
-
 // Tengo que hacer referencia de a dónde lo voy a subir, en este caso a una colección.
+
 // Tengo que completar el Readme. Terminar de completarlo agregando las rutas que faltan. Una descripción de los componentes que hacen referencia a esas nuevas rutas.
 //Hacer el gif completo, hasta hacer el pedido y aparezca el id de la orden generada.
-//Limpiar el proyecto de todas las cosas que no usamos
+
 const Checkout = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -136,42 +137,45 @@ const Checkout = () => {
   return (
     <>
       <h1>Checkout</h1>
-      <div style={{ width: "100%" }}>
-        <form>
-          <input
-            type="text"
-            name="firstName"
-            placeholder="Ingrese su Nombre"
-            value={firstName}
-            onChange={handleChangeFirstName}
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Ingrese su Apellido"
-            value={lastName}
-            onChange={handleChangeLastName}
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder="Ingrese su Teléfono"
-            value={phone}
-            onChange={handleChangePhone}
-          />
-          <input
-            type="text"
-            name="adress"
-            placeholder="Ingrese su Dirección"
-            value={adress}
-            onChange={handleChangeAdress}
-          />
-        </form>
-      </div>
-      <button onClick={createOrder}>Generar Orden</button>
+      <form className="checkout_form">
+        <input
+          className="checkout_input"
+          type="text"
+          name="firstName"
+          placeholder="Ingrese su Nombre"
+          value={firstName}
+          onChange={handleChangeFirstName}
+        />
+        <input
+          className="checkout_input"
+          type="text"
+          name="lastName"
+          placeholder="Ingrese su Apellido"
+          value={lastName}
+          onChange={handleChangeLastName}
+        />
+        <input
+          className="checkout_input"
+          type="text"
+          name="phone"
+          placeholder="Ingrese su Teléfono"
+          value={phone}
+          onChange={handleChangePhone}
+        />
+        <input
+          className="checkout_input"
+          type="text"
+          name="adress"
+          placeholder="Ingrese su Dirección"
+          value={adress}
+          onChange={handleChangeAdress}
+        />
+        <button className="checkout_button" onClick={createOrder}>
+          Generar Orden
+        </button>
+      </form>
     </>
   );
-  // Falta hacer el Formulario con los imputs para agregar a cada order, sincronizar los states, y esos states insertarlos en el objeto de la order
 };
 
 export default Checkout;

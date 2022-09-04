@@ -25,8 +25,8 @@ const Cart = () => {
         </div>
         <div className="cart_product_subtotal">
           <p>Subtotal: ${precio * quantity}</p>
-          <button className="ButtonCartItem" onClick={() => handleRemove(id)}>
-            Eliminar
+          <button className="buttonCart" onClick={() => handleRemove(id)}>
+            X
           </button>
         </div>
       </article>
@@ -37,25 +37,29 @@ const Cart = () => {
     return (
       <>
         <h1>No hay productos en el carrito</h1>
-        <button>
-          <Link to="/">Sigue Comprando</Link>
-        </button>
+        <Link to="/" className="buttonCart">
+          Sigue Comprando
+        </Link>
       </>
     );
   }
 
   return (
     <div>
-      <h1>Carrito</h1>
+      <h1>Carrito de Compras</h1>
       {cart.map((product) => (
         <CartProduct key={product.id} {...product} />
         //<CartItem key={product.id} {...product} />
       ))}
       <h3>Total: ${total}</h3>
-      <button onClick={() => clearCart()} className="Button">
-        Limpiar carrito
-      </button>
-      <Link to="/checkout">Finalizar la compra</Link>
+      <div className="cart_total_buttons">
+        <button className="buttonCart" onClick={() => clearCart()}>
+          Limpiar carrito
+        </button>
+        <Link to="/checkout" className="buttonCart">
+          Finalizar la compra
+        </Link>
+      </div>
     </div>
   );
 };

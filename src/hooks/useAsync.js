@@ -4,7 +4,7 @@ export const useAsync = (asyncFn, dependencies = []) => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // También puedo usar este custome Hook en ItemDetailContainer
+
   useEffect(() => {
     setIsLoading(true);
 
